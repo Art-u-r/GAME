@@ -1,12 +1,13 @@
-import React from 'react';
+import { Button } from 'antd';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import ModalWindowQuiz from './components/UI/ModalWindowQuiz';
+import GamePage from './components/pages/GamePage';
 
 function App(): JSX.Element {
   return (
-    <Routes>
-      <Route path="/:id" element={<ModalWindowQuiz />} />
-    </Routes>
+    <div>
+      <GamePage />
+    </div>
   );
 }
 
