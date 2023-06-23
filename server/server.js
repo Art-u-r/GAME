@@ -3,8 +3,9 @@ const morgan = require('morgan');
 const cors = require('cors');
 const session = require('express-session');
 const store = require('session-file-store');
-const todoRouter = require('./routes/todoRouter');
-const authRouter = require('./routes/authRouter');
+const qwizRouter = require('./routes/qwizRouter');
+const { default: apiQwizRouter } = require('./routes/apiQwizRouter');
+
 require('dotenv').config();
 
 const app = express();
@@ -29,7 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session(sessionConfig));
 
-app.use('/api/todos', todoRouter);
-app.use('/auth', authRouter);
+app.use('/qwiz', qwizRouter);
+app.use('api/qwiz', apiQwizRouter);
 
 app.listen(PORT, () => console.log(`Server has started on PORT ${PORT}`));
