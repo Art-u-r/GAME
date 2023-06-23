@@ -13,10 +13,10 @@ export type QuestionType = {
   theme_id: number;
 };
 
-export const GET_ALL_THEME = 'GET_ALL_THEME';
-export type GetAllThemeType = {
-  type: typeof GET_ALL_THEME;
-  payload: ThemeType;
+export const GET_ALL_THEMES = 'GET_ALL_THEME';
+export type GetAllThemesAction = {
+  type: typeof GET_ALL_THEMES;
+  payload: ThemeType[];
 };
 
 export type QuestionTypes = ThemeType[];
