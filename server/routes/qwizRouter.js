@@ -1,19 +1,24 @@
 const express = require('express');
 
-const { Theme, Qwiz } = require('../db/models');
+const { Theme, Quiz } = require('../db/models');
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const qwizs = await Theme.findAll({
-    include: [Qwiz],
-  });
-  res.json(qwizs);
+  try {
+    const qwizs = await Theme.findAll({
+      include: Quiz,
+    });
+    console.log(qwizs);
+    res.json(qwizs);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const qwiz = await Theme.findOne({ where: { id }, include: [Qwiz] });
+  const qwiz = await Quiz.findOne({ where: { id } });
   res.json(qwiz);
 });
 
