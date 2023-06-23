@@ -4,7 +4,7 @@ const cors = require('cors');
 const session = require('express-session');
 const store = require('session-file-store');
 const qwizRouter = require('./routes/qwizRouter');
-const { default: apiQwizRouter } = require('./routes/apiQwizRouter');
+const apiQwizRouter = require('./routes/apiQwizRouter');
 
 require('dotenv').config();
 
