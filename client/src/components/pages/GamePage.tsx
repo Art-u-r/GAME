@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../features/reduxHooks';
 import { themeThunk } from '../features/thunkActions/themeActionsThunk';
 import ThemesUI from '../UI/ThemesUI';
 
-export default function GamePage() {
+export default function GamePage(): JSX.Element {
   const dispatch = useAppDispatch();
   const themes = useAppSelector((state) => state.themes);
 
